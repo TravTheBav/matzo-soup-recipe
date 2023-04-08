@@ -79,12 +79,12 @@ header {
     padding: 20px max(14px, 10vw);
 }
 
-.intro-text {
+.intro-text, .conclusion {
     font-size: 22px;
     line-height: 2.5rem;
 }
 
-.ingredients {
+.ingredients, .instructions {
     font-size: 20px;
 }
 
@@ -116,11 +116,11 @@ img.photo {
         padding: 20px 25vw;
     }
 
-    .intro-text {
+    .intro-text, .conclusion {
         font-size: 28px;
     }
 
-    .ingredients {
+    .ingredients, .instructions {
         font-size: 26px;
     }
 
