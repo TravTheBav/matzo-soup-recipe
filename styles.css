@@ -23,6 +23,7 @@ header {
     padding: 40px;
     display: grid;
     grid-template-columns: 1fr max-content max-content;
+    align-items: center;
     gap: 1.5rem;
     transition: background-color 0.25s;
 }
@@ -36,7 +37,11 @@ header {
 }
 
 .nav-item a {
-    font-size: 26px;
+    font-size: 20px;
+}
+
+#github-icon {
+    height: 22px;
 }
 
 .page-title, .nav-item a {
@@ -46,7 +51,7 @@ header {
 
 .parallax {
     background-image: url("images/hero_image.jpg");
-    min-height: 700px;
+    min-height: 500px;
 
     background-attachment: fixed;
     background-position: center;
@@ -58,16 +63,65 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 14px;
 }
 
 .page-title {
     font-weight: 800;
-    font-size: 72px;
+    font-size: 60px;
     text-align: center;
 }
 
-p {
-    font-size: 25px;
-    margin: 20px 30vw;
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px max(14px, 10vw);
+}
+
+.intro-text {
+    font-size: 22px;
     line-height: 2.5rem;
+}
+
+.ingredients {
+    font-size: 20px;
+}
+
+img.photo {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media screen and (min-width: 800px) {
+    .nav-item a {
+        font-size: 26px;
+    }
+    
+    #github-icon {
+        height: 33px;
+    }
+
+    .parallax {
+        min-height: 700px;
+    }
+
+    .page-title {
+        font-size: 72px;
+    }
+
+    .body {
+        padding: 20px 25vw;
+    }
+
+    .intro-text {
+        font-size: 28px;
+    }
+
+    .ingredients {
+        font-size: 26px;
+    }
+
 }
