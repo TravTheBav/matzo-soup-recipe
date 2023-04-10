@@ -1,3 +1,4 @@
+// opacity transition for nav bar when scrolling
 let navBar = document.querySelector('.nav-wrapper');
 let heroImage = document.querySelector('.title-wrapper');
 window.onscroll = function () {
@@ -11,6 +12,7 @@ window.onscroll = function () {
     }
 };
 
+// Event listeners for sharing page link to social media
 let shareButton = document.getElementById('share-button');
 let shareDialog = document.querySelector('.share-dialog');
 shareButton.addEventListener('click', function() {
@@ -37,3 +39,29 @@ redditShareButton.addEventListener('click', function () {
     window.open("https://www.reddit.com/submit?url=https://travthebav.github.io/matzo-soup-recipe/&title=Classic%20Matzo%20Ball%20Soup%20Recipe", "_blank");
 });
 
+// fade in for photos
+const faders = document.querySelectorAll(".fade-in");
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -250px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver
+(function(
+    entries,
+    appearOnScroll
+) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        }   else {
+            entry.target.classList.add('appear');
+            appearOnScroll.unobserve(entry.target);
+        }
+    })
+},
+appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});

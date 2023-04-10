@@ -62,11 +62,12 @@ header {
     width: 100vw;
     position: fixed;
     top: 0px;
-    height: 30px;
+    height: auto;
+    z-index: 2;
 }
 
 .nav-wrapper {
-    padding: 40px;
+    padding: 24px;
     display: grid;
     grid-template-columns: 1fr max-content max-content max-content;
     align-items: center;
@@ -138,12 +139,28 @@ img.photo {
     object-fit: cover;
     max-width: 100%;
     height: auto;
+    z-index: 1;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateX(5vw);
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+    will-change: opacity;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateX(0px);
+}
 
 @media screen and (min-width: 800px) {
     .share-dialog {
         max-width: 500px;
+    }
+
+    .nav-wrapper {
+        padding: 32px;
     }
     
     .nav-item a {
